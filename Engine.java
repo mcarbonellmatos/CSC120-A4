@@ -1,8 +1,8 @@
 public class Engine implements EngineRequirements{
     //Attributes
-    private FuelType fuel;
+    private final FuelType fuel;
     private double currentFuelLevel;
-    private double maxFuelLevel;
+    private final double maxFuelLevel;
 
     /**
      * Constructor for Engine
@@ -52,11 +52,15 @@ public class Engine implements EngineRequirements{
     }
 
     public static void main(String[] args) {
-        Engine myEngine = new Engine(FuelType.ELECTRIC, 0., 100.); 
+        Engine myEngine = new Engine(FuelType.ELECTRIC, 80., 100.); 
         System.out.println(myEngine);
 
         Engine myOtherEngine = new Engine(FuelType.STEAM, 50., 100.);
         System.out.println(myOtherEngine);
+
+        Train myTrain = new Train(FuelType.ELECTRIC, 100, 50, 3, 5);
+        System.err.println("Train's Engine: " + myTrain.getENgine());
+        myTrain.printManifest();
     }
 
 }
