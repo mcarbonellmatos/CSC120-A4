@@ -87,6 +87,8 @@ public class Engine implements EngineRequirements{
         System.out.println("Passengers getting off the train:");
         passenger1.getOffCar(myTrain.getCar(0));
         passenger2.getOffCar(myTrain.getCar(1));
+        System.out.println(passenger1.getName() + " got off the train.");
+        System.out.println(passenger2.getName() + " got off the train.");
 
         System.out.println("Updated manifest: ");
         myTrain.printManifest();
