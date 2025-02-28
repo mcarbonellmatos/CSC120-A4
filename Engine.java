@@ -10,29 +10,34 @@ public class Engine implements EngineRequirements{
      * @param currentFuelLevel currentFuelLevel Engine's current fuel level
      * @param maxFueLevel maxFuelLevel Engine's max fuel level
      */
-    public Engine(FuelType f, double currentFuelLevel, double maxFuelLevel){
-        this.fuel = f;
+    public Engine(FuelType fuel, double currentFuelLevel, double maxFuelLevel){
+        this.fuel = fuel;
         this.currentFuelLevel = currentFuelLevel;
         this.maxFuelLevel = maxFuelLevel;
     }
 
+    @Override
     public FuelType getFuelType() {
         return this.fuel;
     }
 
+    @Override
     public double getMaxFuel(){
         return maxFuelLevel;
     }
 
+    @Override
     public double getCurrentFuel(){
         return currentFuelLevel;
     }
 
+    @Override
     public void refuel(){
         currentFuelLevel = maxFuelLevel;
 
     }
 
+    @Override
     public Boolean go(){
         if (currentFuelLevel > 0){
             currentFuelLevel -= 1;
@@ -41,6 +46,7 @@ public class Engine implements EngineRequirements{
         return false;
     } 
 
+    @Override
     public String toString() {
         return ("Engine has fuel type: " + this.fuel + " current fuel level: " + this.currentFuelLevel + " and max fuel level: " + this.maxFuelLevel); 
     }
@@ -52,7 +58,5 @@ public class Engine implements EngineRequirements{
         Engine myOtherEngine = new Engine(FuelType.STEAM, 50., 100.);
         System.out.println(myOtherEngine);
     }
-
-
 
 }
