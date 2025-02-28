@@ -21,20 +21,24 @@ public class Engine implements EngineRequirements{
     }
 
     public double getMaxFuel(){
-        return 0;
+        return maxFuelLevel;
     }
 
     public double getCurrentFuel(){
-        return 0;
+        return currentFuelLevel;
     }
 
     public void refuel(){
-        
+        currentFuelLevel = maxFuelLevel;
 
     }
 
     public Boolean go(){
-        return true;
+        if (currentFuelLevel > 0){
+            currentFuelLevel -= 1;
+            return true;
+        }
+        return false;
     } 
 
     public String toString() {
