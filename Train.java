@@ -4,22 +4,22 @@ public class Train {
     private final ArrayList<Car> cars;
 
     public Train(FuelType fuelType, double maxFuelLevel, double currentFuelLevel, int numberCars, int passengerCapacity){
-        this.engine = new Engine(fuelType, maxFuelLevel, currentFuelLevel);
+        this.engine = new Engine(fuelType, currentFuelLevel, maxFuelLevel);
         this.cars = new ArrayList<>();
 
-        for (int i = 0; i < numberCars; i++){
-            cars.add(new Car(passengerCapacity));
+        for (int i = 0; i <numberCars; i++){
+            this.cars.add(new Car(passengerCapacity));
         }
 
     }
 
-    public Engine getENgine(){
+    public Engine getEngine(){
         return engine;
     }
 
     public Car getCar(int i){
         if (i >= 0 && i < cars.size()){
-            return cars.get(1);
+            return cars.get(i);
         }
         return null;
     }
